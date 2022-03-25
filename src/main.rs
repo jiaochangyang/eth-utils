@@ -17,13 +17,13 @@ fn main() {
         hasher.update(args[2].as_bytes());
 
         let result = hasher.finalize();
-        println!("{:?} -> {:?}", args[2], result.encode_hex::<String>());
+        println!("{}", result.encode_hex::<String>());
     } else if args[1].to_lowercase().eq("sha3_256") {
         let mut hasher = Sha3_256::new();
         hasher.update(args[2].as_bytes());
 
         let result = hasher.finalize();
-        println!("{:?} -> {:?}", args[2], result.encode_hex::<String>());
+        println!("{}", result.encode_hex::<String>());
     } else {
         println!(
             "Expected hash type to be one of <keccack256 | sha3_256>, received {:?}",
